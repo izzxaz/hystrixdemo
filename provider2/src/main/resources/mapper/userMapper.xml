@@ -1,0 +1,10 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.az2x.cloud.provider.dao.UserDao">
+    <select id="getUserById" resultType="com.az2x.cloud.entity.User">
+        select * from users where id = #{id}
+    </select>
+
+    <select id="getUsers" resultType="com.az2x.cloud.entity.User">
+        select * from users
+    </select>
+</mapper>
