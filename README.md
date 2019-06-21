@@ -1,2 +1,4 @@
-# feigndemo
-SpringCloud+feign实现客户端负载均衡Demo
+# hystrixdemo
+SpringCloud+feign+hystrix实现客户端负载均衡Demo
+
+使用hystrix为consumer提供保护机制
