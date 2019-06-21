@@ -1,5 +1,6 @@
 package com.az2x.cloud.api.provider.service;
 
+import com.az2x.cloud.api.provider.service.factory.UserProviderFallbackFactory;
 import com.az2x.cloud.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 //与provider中的spring.application.name保持一致
-@FeignClient("provider")
+@FeignClient(value = "provider", fallbackFactory = UserProviderFallbackFactory.class)
 public interface UserProviderService {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)

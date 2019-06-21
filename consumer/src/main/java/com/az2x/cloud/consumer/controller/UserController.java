@@ -20,6 +20,7 @@ public class UserController {
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     @ResponseBody
+    //@HystrixCommand(fallbackMethod = "getUsersFallBack")
     public List<User> getUsers() {
         return userProviderService.getUsers();
     }
@@ -35,4 +36,14 @@ public class UserController {
     public String getCheck() {
         return userProviderService.getCheck();
     }
+
+    /*public List<User> getUsersFallBack(){
+        List<User> list = new ArrayList();
+        User tmp = new User();
+        tmp.setId(1);
+        tmp.setUsername("error");
+        tmp.setPassword("123456");
+        list.add(tmp);
+        return list;
+    }*/
 }

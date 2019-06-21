@@ -1,7 +1,5 @@
 package com.az2x.cloud.consumer.config;
 
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +14,8 @@ public class SpringConfig {
         return new RestTemplate();
     }
 
-    @Bean
+    /*@Bean
     public IRule RibbonRule() {
         return new RandomRule();
-    }
+    }*/
 }
